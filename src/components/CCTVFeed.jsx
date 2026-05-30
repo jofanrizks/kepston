@@ -16,16 +16,11 @@ function SilhouetteSvg({ hasViolation, violationType }) {
 
   return (
     <svg width="70" height="120" viewBox="0 0 70 120" fill="none">
-      {/* Head */}
       <circle cx="35" cy="20" r="12" fill={color} opacity="0.8" />
-      {/* Helmet */}
       <ellipse cx="35" cy="11" rx="14" ry="7" fill={helmetColor} opacity="0.9" />
-      {/* Body */}
       <rect x="22" y="35" width="26" height="35" rx="6" fill={vestColor} opacity="0.85" />
-      {/* Arms */}
       <rect x="8" y="37" width="12" height="28" rx="5" fill={color} opacity="0.7" />
       <rect x="50" y="37" width="12" height="28" rx="5" fill={color} opacity="0.7" />
-      {/* Legs */}
       <rect x="22" y="71" width="11" height="35" rx="5" fill={color} opacity="0.7" />
       <rect x="37" y="71" width="11" height="35" rx="5" fill={color} opacity="0.7" />
     </svg>
@@ -48,12 +43,9 @@ export default function CCTVFeed({ label, hasAlert, alertType, alertMessage, sce
 
   return (
     <div className={`cctv-feed ${hasAlert ? 'active-alert' : ''}`}>
-      {/* Background scene */}
       <div className="cctv-bg" style={{ background: `linear-gradient(160deg, ${colors.bg} 0%, ${colors.floor} 60%, ${colors.accent} 100%)` }} />
 
-      {/* Grid overlay */}
       <svg className="cctv-grid-detail" viewBox="0 0 400 225" preserveAspectRatio="none">
-        {/* Perspective floor lines */}
         {[0.3, 0.5, 0.7, 0.9].map((y, i) => (
           <line key={i} x1="0" y1={y * 225} x2="400" y2={y * 225} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
         ))}
