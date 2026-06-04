@@ -9,17 +9,14 @@ import Filterbar from "../components/Filterbar";
 function Dashboard() {
   return (
     <div className="d-flex">
-      {/* Sidebar */}
       <Sidebar />
 
-      {/* Main Content */}
       <div className="flex-grow-1">
         <Navbar />
 
         <div className="container-fluid mt-3">
           <Filterbar />
 
-          {/* Cards */}
           <div className="row">
             <div className="col-md-3">
               <StartCard title="Total Pelanggaran" value="120" />
@@ -35,7 +32,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Charts */}
           <div className="row mt-4">
             <div className="col-md-8">
               <TrendChart />

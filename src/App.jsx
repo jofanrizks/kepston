@@ -4,16 +4,19 @@ import LiveCCTV from "./pages/LiveCCTV";
 import Report from "./pages/Report";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Users from "./pages/Users";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/cctv" element={<LiveCCTV />} />
         <Route path="/laporan" element={<Report />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/pengguna" element={<Users />} />
       </Routes>
     </Router>
   );

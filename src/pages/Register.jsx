@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Register({ goToLogin }) {
+export default function Register() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     nama: "",
     username: "",
@@ -12,24 +14,8 @@ export default function Register({ goToLogin }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (
-      !form.nama ||
-      !form.username ||
-      !form.email ||
-      !form.password ||
-      !form.confirmPassword
-    ) {
-      alert("Lengkapi semua field!");
-      return;
-    }
-
-    if (form.password !== form.confirmPassword) {
-      alert("Password tidak sama!");
-      return;
-    }
-
     alert("Register berhasil!");
-    goToLogin();
+    navigate("/");
   };
 
   return (
@@ -58,7 +44,6 @@ export default function Register({ goToLogin }) {
           boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
         }}
       >
-        {/* LEFT SIDE */}
         <div
           style={{
             padding: 60,
@@ -330,7 +315,7 @@ export default function Register({ goToLogin }) {
           >
             Sudah punya akun?
             <span
-              onClick={goToLogin}
+              onClick={() => navigate("/")}
               style={{
                 color: "#2563eb",
                 fontWeight: 700,

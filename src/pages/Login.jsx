@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Login({ onLogin, goToRegister }) {
+export default function Login() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     username: "",
     password: "",
@@ -10,7 +13,7 @@ export default function Login({ onLogin, goToRegister }) {
     e.preventDefault();
 
     if (form.username && form.password) {
-      onLogin();
+      navigate("/dashboard");
     }
   };
 
@@ -40,7 +43,6 @@ export default function Login({ onLogin, goToRegister }) {
           boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
         }}
       >
-        {/* LEFT SIDE */}
         <div
           style={{
             padding: 60,
@@ -136,7 +138,6 @@ export default function Login({ onLogin, goToRegister }) {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div
           style={{
             background: "#fff",
@@ -232,8 +233,7 @@ export default function Login({ onLogin, goToRegister }) {
                 padding: "14px",
                 border: "none",
                 borderRadius: 14,
-                background:
-                  "linear-gradient(135deg, #2563eb, #1d4ed8)",
+                background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
                 color: "#fff",
                 fontWeight: 700,
                 fontSize: 15,
@@ -253,18 +253,7 @@ export default function Login({ onLogin, goToRegister }) {
               color: "#64748b",
             }}
           >
-            Belum punya akun?
-            <span
-              onClick={goToRegister}
-              style={{
-                color: "#2563eb",
-                fontWeight: 700,
-                marginLeft: 6,
-                cursor: "pointer",
-              }}
-            >
-              Register
-            </span>
+
           </div>
         </div>
       </div>
